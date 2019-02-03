@@ -1,0 +1,40 @@
+<div>
+  <span>タイトル</span>
+  <input v-model="name">
+  <br>
+  <span>働き方</span>
+  <input type="checkbox" v-model="recordClass[0]">
+  <span>設計</span>
+  <input type="checkbox" v-model="recordClass[1]">
+  <span>製造</span>
+  <input type="checkbox" v-model="recordClass[2]">
+  <span>試験作成</span>
+  <input type="checkbox" v-model="recordClass[3]">
+  <span>試験実施</span>
+  <input type="checkbox" v-model="recordClass[4]">
+  <br>
+  <span>内容</span>
+  <textarea v-model="body"></textarea>
+  <br>
+  <input type="button" value="登録" v-on:click="regist">
+  <table border="5">
+    <tr>
+      <th>名前</th>
+      <th>働き方</th>
+      <th>設計</th>
+      <th>製造</th>
+      <th>試験作成</th>
+      <th>試験実施</th>
+      <th>内容</th>
+    </tr>
+    <tr v-for="record in records">
+      <td>{{ record.name }}</td>
+      <td>{{ record.recordClass[0] }}</td>
+      <td>{{ record.recordClass[1] }}</td>
+      <td>{{ record.recordClass[2] }}</td>
+      <td>{{ record.recordClass[3] }}</td>
+      <td>{{ record.recordClass[4] }}</td>
+      <td>{{ record.body }}</td>
+    </tr>
+  </table>
+</div>
