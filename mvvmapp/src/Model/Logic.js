@@ -1,19 +1,19 @@
 export default{
   datas : {
     name : "",
-    recordClass : [false,false,false,false,false],
+    recordClasses : [false,false,false,false,false],
     body : "",
     records : []
   },
-  regist : function( name, recordClass, body ){
-    var recordClassValues = [];
+  regist : function( name, recordClasses, body ){
+    var recordClassesValues = [];
     for(var i = 0;i < 5;i++){
-      if(recordClass[i] == true){
-        recordClassValues[i] = "◯";
+      if(recordClasses[i] == true){
+        recordClassesValues[i] = "◯";
         continue;
       }
-      recordClassValues[i] = "×";
+      recordClassesValues[i] = "×";
     }
-    this.datas.records.push({"name" : name, "recordClass" : recordClassValues, "body" : body});
+    this.datas.records.push({"name" : name, "recordClasses" : recordClassesValues, "body" : body});
   }
 }

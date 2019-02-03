@@ -3,15 +3,15 @@
   <input v-model="name">
   <br>
   <span>働き方</span>
-  <input type="checkbox" v-model="recordClass[0]">
+  <input type="checkbox" v-model="recordClasses[0]">
   <span>設計</span>
-  <input type="checkbox" v-model="recordClass[1]">
+  <input type="checkbox" v-model="recordClasses[1]">
   <span>製造</span>
-  <input type="checkbox" v-model="recordClass[2]">
+  <input type="checkbox" v-model="recordClasses[2]">
   <span>試験作成</span>
-  <input type="checkbox" v-model="recordClass[3]">
+  <input type="checkbox" v-model="recordClasses[3]">
   <span>試験実施</span>
-  <input type="checkbox" v-model="recordClass[4]">
+  <input type="checkbox" v-model="recordClasses[4]">
   <br>
   <span>内容</span>
   <textarea v-model="body"></textarea>
@@ -29,11 +29,7 @@
     </tr>
     <tr v-for="record in records">
       <td>{{ record.name }}</td>
-      <td>{{ record.recordClass[0] }}</td>
-      <td>{{ record.recordClass[1] }}</td>
-      <td>{{ record.recordClass[2] }}</td>
-      <td>{{ record.recordClass[3] }}</td>
-      <td>{{ record.recordClass[4] }}</td>
+      <td v-for="recordClass in record.recordClasses">{{ recordClass }}</td>
       <td>{{ record.body }}</td>
     </tr>
   </table>

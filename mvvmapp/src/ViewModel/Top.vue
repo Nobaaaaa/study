@@ -9,7 +9,7 @@ export default{
   },
   methods : {
     regist : function(){
-      Logic.regist(this.name, this.recordClass, this.body);
+      Logic.regist(this.name, this.recordClasses, this.body);
     }
   }
 }
