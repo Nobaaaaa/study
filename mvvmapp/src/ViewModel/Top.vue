@@ -5,7 +5,12 @@ import Logic from "../Model/Logic.js";
 
 export default{
   data : function(){
-    return Logic.datas
+    return {
+      name : Logic.datas.name,
+      recordClasses : Logic.datas.recordClasses,
+      body : Logic.datas.body,
+      records : Logic.datas.records
+    }
   },
   methods : {
     regist : function(){
