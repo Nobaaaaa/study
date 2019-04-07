@@ -1,19 +1,28 @@
+import axios from 'axios';
+
 export default{
   datas : {
     name : "",
-    recordClasses : [false,false,false,false,false],
+    recordClassList : [false,false,false,false,false],
     body : "",
     records : []
   },
-  regist : function( name, recordClasses, body ){
-    var recordClassesValues = [];
-    for(var i = 0;i < 5;i++){
-      if(recordClasses[i] == true){
-        recordClassesValues[i] = "◯";
-        continue;
-      }
-      recordClassesValues[i] = "×";
-    }
-    this.datas.records.push({"name" : name, "recordClasses" : recordClassesValues, "body" : body});
+  CallRegist : function( name, recordClassList, body ){
+    //this.datas.records.push({"name" : name, "recordClassList" : Object.assign({},recordClassList), "body" : body});
+    var data = this.datas;
+    axios.get("http://localhost:3000/api/regist"
+              + "/name/" + name
+              + "/recordClassList/" + recordClassList
+              + "/body/" + body)
+         .then(function(res){
+           alert(res.data + "aaa");
+           data.name = res.data + "aaa";
+         })
+         .catch(function(error){
+           alert(error);
+         })
+  },
+  Test : function(){
+    alert(this.datas.name);
   }
-}
+};

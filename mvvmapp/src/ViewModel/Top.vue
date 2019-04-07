@@ -7,14 +7,17 @@ export default{
   data : function(){
     return {
       name : Logic.datas.name,
-      recordClasses : Logic.datas.recordClasses,
+      recordClassList : Logic.datas.recordClassList,
       body : Logic.datas.body,
-      records : Logic.datas.records
+      displayRecords : Logic.datas.records
     }
   },
   methods : {
     regist : function(){
-      Logic.regist(this.name, this.recordClasses, this.body);
+      Logic.CallRegist(this.name, this.recordClassList, this.body);
+    },
+    test : function(){
+      Logic.Test();
     }
   }
 }
